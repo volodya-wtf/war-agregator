@@ -13,10 +13,8 @@ type Params<PATH extends Paths, METHOD extends Methods<PATH>> = GetOrProp<
   api.paths[PATH][METHOD],
   'parameters'
 >;
-export type Response<
-  PATH extends Paths,
-  METHOD extends Methods<PATH>,
-> = GetOrProp<api.paths[PATH][METHOD], 'responses'>;
+export type Response<PATH extends Paths, METHOD extends Methods<PATH>> =
+  GetOrProp<api.paths[PATH][METHOD], 'responses'>;
 
 type Payload<PATH extends Paths, METHOD extends Methods<PATH>> = {
   query: GetOrProp<Params<PATH, METHOD>, 'query'>;
